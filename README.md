@@ -1,0 +1,2 @@
+# Trading_Frog
+Trading Frog is a user-friendly, design-centered platform aims to help your finance research simpler and make finance data more understandable. The goals: - a one stop platform to view important and most updated finance news and statistics about important indices to get a sense of market direction everyday. - visualize stock data in much more understandable way for stock trading amateur.
