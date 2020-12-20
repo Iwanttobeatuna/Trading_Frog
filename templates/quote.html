@@ -1,0 +1,17 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Quote
+{% endblock %}
+
+{% block main %}
+    <form action="/quote" method="post">
+        <div class="form-group">
+            <p> Search <b>US Stock</b> by typing its symbol below! </p>
+            <p>For reference of symbol, kindly <a href= "https://www.google.com/">Google</a> or refer <a href= "https://www.investing.com/">Investing.com</a></p>
+            <input autocomplete="off" autofocus class="form-control" name="symbol" placeholder="Symbol" type="text">
+        </div>
+        <button class="btn btn-primary" type="submit">Search</button>
+        <p><small>Example: GOOGL, AAPL, GE, BA, DIS, ...</small></p>
+    </form>
+{% endblock %}

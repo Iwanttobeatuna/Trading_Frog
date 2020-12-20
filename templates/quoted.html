@@ -1,0 +1,154 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Quoted
+{% endblock %}
+
+{% block main %}
+<div class="grey-bg container-fluid">
+  <section id="minimal-statistics">
+    <div class="row">
+      <div class="col-12 mt-3 mb-1">
+        <h4 class="text-uppercase"><b>{{symbol}}'s overview</b></h4>
+        <p>Currency = {{currency}}</p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-xl-3 col-sm-6 col-12">
+        <div class="card">
+          <div class="card-content">
+            <div class="card-body">
+              <div class="media d-flex">
+                <div class="align-self-center">
+                  <i class="icon-graph success font-large-2 float-left"></i>
+                </div>
+                <div class="media-body text-right">
+                  <h3>${{op}}</h3>
+                  <span>Open price</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-xl-3 col-sm-6 col-12">
+        <div class="card">
+          <div class="card-content">
+            <div class="card-body">
+              <div class="media d-flex">
+                <div class="align-self-center">
+                  <i class="icon-graph success font-large-2 float-left"></i>
+                </div>
+                <div class="media-body text-right">
+                  <h3>${{high}}</h3>
+                  <span>High</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-xl-3 col-sm-6 col-12">
+        <div class="card">
+          <div class="card-content">
+            <div class="card-body">
+              <div class="media d-flex">
+                <div class="align-self-center">
+                  <i class="icon-graph success font-large-2 float-left"></i>
+                </div>
+                <div class="media-body text-right">
+                  <h3>${{low}}</h3>
+                  <span>Low</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-xl-3 col-sm-6 col-12">
+        <div class="card">
+          <div class="card-content">
+            <div class="card-body">
+              <div class="media d-flex">
+                <div class="align-self-center">
+                  <i class="icon-graph success font-large-2 float-left"></i>
+                </div>
+                <div class="media-body text-right">
+                  <h3>{{vol}}</h3>
+                  <span>Volume traded</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-12">
+      <div class="card">
+        <div class="card-body">
+            <p class="card-text"><b></b>Company Description:</b></p>
+            <h6 class="card-subtitle mb-2 text-muted line-height">{{desc}}</h6>
+            <a href="{{url}}" class="card-link">Read more</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-12">
+      <div class="card">
+        <div class="card-body">
+            <p class="card-text"><b>Closing price against time:</b></p>
+               <div id="chart" class="chart">
+                </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-12">
+      <div class="card">
+        <div class="card-body">
+            <p class="card-text"><b>Volume traded against time:</b></p>
+               <div id="chart1" class="chart">
+                </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-12 flex justify-content-center text-left">
+      <div class="card">
+        <div class="card-body text-left">
+            <p class="card-text text-center text-uppercase"><b>{{symbol}}'s recent data:</b></p>
+            <table class ="table table-borderless table-striped">
+             {% for table in tables %}
+            {{ table|safe }}
+            {% endfor %}
+            </table>
+        </div>
+      </div>
+    </div>
+
+
+  </section>
+</div>
+
+{% endblock %}
+
+{% block script %}
+<script type="text/javascript">
+
+  var graphs = {{ graphJSON | safe }};
+  var config = {responsive: true}
+
+  Plotly.plot('chart',graphs, config, {});
+
+  </script>
+
+  <script type="text/javascript">
+
+  var graphs1 = {{ graphJSON1 | safe }};
+  var config = {responsive: true}
+
+  Plotly.plot('chart1',graphs1, config, {});
+
+  </script>
+{% endblock %}
