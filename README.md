@@ -1,7 +1,5 @@
 # Title
-Trading Frog
-
-## This is a CS50 final project
+A CS50 Final Project: Trading Frog
 ## Score:
 Total: 21.0/21.0
 Video: 3.0/3.0
