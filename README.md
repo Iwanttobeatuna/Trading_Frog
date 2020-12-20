@@ -1,12 +1,12 @@
 # Title
 A CS50 Final Project: Trading Frog
 ## Score:
-Total: 21.0/21.0
-Video: 3.0/3.0
-Documentation: 3.0/3.0
-Correctness: 5.0/5.0
-Design: 5.0/5.0
-Style: 5.0/5.0
+##### Total: 21.0/21.0
+##### Video: 3.0/3.0
+##### Documentation: 3.0/3.0
+##### Correctness: 5.0/5.0
+##### Design: 5.0/5.0
+##### Style: 5.0/5.0
 
 # Description
 Trading Frog is a user-friendly, design-centered platform aims to help your finance research simpler and make finance data more understandable. The goals:
@@ -22,7 +22,7 @@ Languages used include: Python, HTML, CSS, SQL, JS
 Python libraries used: Flask, bs4, investpy, pandas, numpy, werkzeug, cs50, plotly
 
 # Installation & Setup
-**1. Installing neccessary Python library**
+##### **1. Installing neccessary Python library**
 To install, run the following lines on your terminal.
 - Flask: `pip install Flask`
 - bs4: `pip install bs4`
@@ -32,7 +32,7 @@ To install, run the following lines on your terminal.
 - werkzeug: `pip install werkzeug`
 - cs50: `pip install cs50`
 - plotly: `pip install plotly`
-**2. After installation:**
+##### **2. After installation:**
 - Run `cd Trading Frog` on your terminal
 - then run `flask run`.
 - A link should be presented. Open the link to visit Trading Frog.
